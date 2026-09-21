@@ -3,146 +3,161 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Cheng Yiu Nam Young – Senior Graphic Designer</title>
-<meta name="description" content="Portfolio of Cheng Yiu Nam Young, senior graphic designer in Hong Kong. Art direction for retail, events and print.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap">
+<title>Cheng Yiu Nam Young – Graphic Designer, Corporate &amp; Brand Communications</title>
+<meta name="description" content="Portfolio of Young Cheng (Cheng Yiu Nam Young), graphic designer in Hong Kong. Reports, newsletters, campaigns and environmental communications.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap">
 <style>
   :root {
-    --bg:        #FFFFFF;
-    --ink:       #14201A;
-    --text:      #2B3630;
-    --muted:     #5F6C65;
-    --accent:    #2A7A55;
-    --rule:      #D5DCD7;
-    --tint:      #EEF4F0;
-    --tile-ink:  #14201A;
-    --tile-ink-text: #FFFFFF;
-    --btn-text:  #FFFFFF;
+    /* ===== COLOUR SETTINGS (taken from the portfolio cover) =====
+       Change any hex code here and the whole site follows. */
+    --bg:     #232833;   /* page background */
+    --slate:  #2C313C;   /* card background */
+    --cream:  #F5F3EC;   /* main text */
+    --gold:   #C09A65;   /* accent */
+    --muted:  #9097A3;   /* secondary text */
+    --dim:    #5D6371;   /* corner marks and thin lines */
+    --line:   #3B4150;   /* dividers */
+
+    --serif: 'Newsreader', 'Lora', 'Charter', Georgia, serif;
+    --sans:  'IBM Plex Sans', 'Carlito', 'Liberation Sans', Arial, sans-serif;
+
+    color-scheme: dark;
     box-sizing: border-box;
     padding-top: env(safe-area-inset-top, 0px);
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #0E1512; --ink: #EAF1EC; --text: #C9D4CD; --muted: #93A198;
-      --accent: #5CBE8E; --rule: #25332B; --tint: #17231D;
-      --tile-ink: #22332A; --tile-ink-text: #EAF1EC; --btn-text: #0E1512;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #0E1512; --ink: #EAF1EC; --text: #C9D4CD; --muted: #93A198;
-    --accent: #5CBE8E; --rule: #25332B; --tint: #17231D;
-    --tile-ink: #22332A; --tile-ink-text: #EAF1EC; --btn-text: #0E1512;
-  }
-
-  html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; background: var(--bg); }
   * { box-sizing: border-box; }
   body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Poppins', 'Liberation Sans', Arial, sans-serif;
-    font-size: 1rem; line-height: 1.6;
+    margin: 0; background: var(--bg); color: var(--cream);
+    font-family: var(--sans); font-size: 1rem; line-height: 1.6;
     -webkit-text-size-adjust: 100%;
   }
   a { color: inherit; }
-  a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  a:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 
-  /* brand spine, echoing the resume */
-  .spine { position: fixed; left: 0; top: 0; bottom: 0; width: 8px; background: #2A7A55; z-index: 5; }
+  /* crop marks in the four corners, as on the portfolio cover */
+  .corner {
+    position: fixed; width: 1.5rem; height: 1.5rem; color: var(--dim); pointer-events: none; z-index: 2;
+    background:
+      linear-gradient(currentColor, currentColor) center / 1px 100% no-repeat,
+      linear-gradient(currentColor, currentColor) center / 100% 1px no-repeat;
+  }
+  .corner.tl { top: calc(1.5rem + env(safe-area-inset-top, 0px)); left: 1.5rem; }
+  .corner.tr { top: calc(1.5rem + env(safe-area-inset-top, 0px)); right: 1.5rem; }
+  .corner.bl { bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)); left: 1.5rem; }
+  .corner.br { bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)); right: 1.5rem; }
 
-  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 3rem) 0 clamp(1.75rem, 6vw, 3.5rem); }
+  /* work categories running down the right edge */
+  .cats {
+    position: fixed; right: 2.4rem; top: 50%; transform: translateY(-50%);
+    writing-mode: vertical-rl; display: flex; align-items: center; gap: 1.2rem;
+    color: var(--dim); font-size: 0.95rem; letter-spacing: 0.06em; z-index: 2; pointer-events: none;
+  }
+  .cats i { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); display: block; }
 
-  /* top bar */
-  .top { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 0; }
-  .mark { width: 1.1rem; height: 1.1rem; background: var(--accent); display: block; }
-  .top nav { display: flex; gap: clamp(1rem, 4vw, 2.25rem); font-weight: 500; font-size: 0.92rem; }
-  .top nav a { text-decoration: none; color: var(--ink); padding: 0.25rem 0; border-bottom: 2px solid transparent; }
-  .top nav a:hover { border-bottom-color: var(--accent); }
+  .wrap {
+    max-width: 1240px; margin: 0 auto;
+    padding: 0 clamp(2rem, 9vw, 7.5rem) 0 clamp(2.4rem, 8vw, 6.5rem);
+  }
+
+  .top { display: flex; justify-content: flex-end; gap: 2rem; padding: 2.4rem 0 0; font-weight: 500; font-size: 0.92rem; }
+  .top a { text-decoration: none; color: var(--muted); padding: 0.2rem 0; border-bottom: 1px solid transparent; }
+  .top a:hover { color: var(--cream); border-bottom-color: var(--gold); }
 
   /* hero */
-  .hero { padding: clamp(3rem, 9vw, 6.5rem) 0 clamp(3rem, 8vw, 5.5rem); border-bottom: 0.18rem solid var(--ink); }
+  .hero { min-height: 86vh; min-height: 86svh; display: flex; flex-direction: column; justify-content: center; padding: 3rem 0 4rem; }
+  .eyebrow { margin: 0 0 2.2rem; color: var(--gold); font-weight: 500; font-size: 1.05rem; }
   h1 {
-    margin: 0; font-weight: 700; color: var(--ink);
-    font-size: clamp(2.3rem, 7.6vw, 5.4rem); line-height: 1.02; letter-spacing: -0.035em;
+    margin: 0; font-family: var(--serif); font-weight: 400; color: var(--cream);
+    font-size: clamp(4.2rem, 14vw, 10.5rem); line-height: 0.93; letter-spacing: -0.02em;
   }
-  .role { margin: 1.4rem 0 0; font-weight: 500; font-size: clamp(1.15rem, 2.6vw, 1.55rem); color: var(--ink); line-height: 1.25; }
-  .tag  { margin: 0.4rem 0 0; color: var(--muted); font-size: 1rem; }
-  .avail { margin: 1.6rem 0 0; display: flex; align-items: center; gap: 0.6rem; font-weight: 500; color: var(--accent); font-size: 0.95rem; }
-  .avail i { width: 0.7rem; height: 0.7rem; border-radius: 50%; background: var(--accent); display: inline-block; }
-  .cta { margin: 2.2rem 0 0; display: flex; flex-wrap: wrap; gap: 0.8rem; }
-  .btn {
-    display: inline-block; text-decoration: none; font-weight: 500; font-size: 0.95rem;
-    padding: 0.8rem 1.4rem; border: 2px solid var(--accent); border-radius: 0.2rem;
+  .sub {
+    margin: 1.8rem 0 0; font-family: var(--serif); font-style: italic; font-weight: 400;
+    font-size: clamp(1.3rem, 3.5vw, 2.4rem); line-height: 1.2; color: var(--muted); max-width: 52rem;
   }
-  .btn.primary { background: var(--accent); color: var(--btn-text); }
-  .btn.ghost { color: var(--accent); }
-  .btn:hover { filter: brightness(1.08); }
+  .rule { max-width: 52rem; height: 1px; margin: 2.8rem 0 2.2rem; background: linear-gradient(90deg, var(--gold) 0 8rem, var(--dim) 8rem 100%); }
+  .facts { display: flex; flex-wrap: wrap; gap: 1.6rem 3.6rem; margin: 0; }
+  .facts div { min-width: 0; }
+  .facts dt { color: var(--muted); font-size: 0.9rem; }
+  .facts dd { margin: 0.15rem 0 0; font-weight: 500; font-size: 1.15rem; color: var(--cream); }
+  .facts a { text-decoration: none; }
+  .facts a:hover { color: var(--gold); }
 
   /* sections: title rail | content */
-  section.row { display: grid; grid-template-columns: 11rem 1fr; column-gap: 2rem; padding: clamp(2.5rem, 6vw, 4rem) 0; border-bottom: 1px solid var(--rule); }
-  section.row:last-of-type { border-bottom: none; }
-  h2 { margin: 0; font-weight: 700; font-size: 1rem; color: var(--accent); line-height: 1.4; padding-top: 0.35rem; }
+  section.row { display: grid; grid-template-columns: 11rem 1fr; column-gap: 2rem; padding: clamp(3rem, 7vw, 5rem) 0; border-top: 1px solid var(--line); }
+  h2 { margin: 0; padding-top: 0.3rem; font-family: var(--sans); font-weight: 500; font-size: 1rem; color: var(--gold); line-height: 1.4; }
 
-  /* work grid */
+  .work-intro { margin: 0 0 2rem; font-family: var(--serif); font-style: italic; font-size: clamp(1.2rem, 2.4vw, 1.6rem); line-height: 1.35; color: var(--muted); max-width: 40rem; }
   .work { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; grid-auto-flow: dense; }
-  .work-intro { margin: 0 0 1.6rem; color: var(--muted); max-width: 38rem; }
   .tile {
-    position: relative; min-height: 14rem; padding: 1.25rem 1.3rem;
-    display: flex; flex-direction: column; justify-content: space-between;
-    border-radius: 0.2rem;
+    min-height: 13.5rem; padding: 1.2rem 1.3rem; display: flex; flex-direction: column; justify-content: space-between;
+    border: 1px solid transparent; border-radius: 2px;
   }
   .tile.wide { grid-column: span 2; }
-  .tile::before { content: ""; width: 0.8rem; height: 0.8rem; background: currentColor; opacity: 0.9; }
-  .tile h3 { margin: 0; font-weight: 700; font-size: clamp(1.15rem, 2.2vw, 1.55rem); line-height: 1.15; letter-spacing: -0.015em; }
-  .t-forest { background: #2A7A55; color: #FFFFFF; }
-  .t-ink    { background: var(--tile-ink); color: var(--tile-ink-text); }
-  .t-tint   { background: var(--tint); color: var(--ink); }
-  .t-tint::before { background: var(--accent); }
+  .tile::before {
+    content: ""; width: 1.1rem; height: 1.1rem; opacity: 0.85;
+    background:
+      linear-gradient(currentColor, currentColor) center / 1px 100% no-repeat,
+      linear-gradient(currentColor, currentColor) center / 100% 1px no-repeat;
+  }
+  .tile h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.35rem, 2.5vw, 1.9rem); line-height: 1.15; letter-spacing: -0.01em; }
+  .t-slate   { background: var(--slate); color: var(--cream); }
+  .t-outline { border-color: var(--dim); color: var(--cream); }
+  .t-cream   { background: var(--cream); color: var(--bg); }
+  .t-gold    { background: var(--gold); color: var(--bg); }
 
   /* about */
-  .about p { margin: 0 0 1.4rem; max-width: 40rem; font-size: 1.05rem; color: var(--ink); line-height: 1.7; }
-  .jobs { list-style: none; margin: 2rem 0 0; padding: 0; }
-  .jobs li { display: grid; grid-template-columns: 1fr auto; column-gap: 1.5rem; padding: 0.95rem 0; border-top: 1px solid var(--rule); }
-  .jobs li:last-child { border-bottom: 1px solid var(--rule); }
-  .jobs b { color: var(--ink); font-weight: 700; }
-  .jobs .r { display: block; color: var(--muted); font-size: 0.9rem; }
-  .jobs .d { color: var(--accent); font-weight: 500; font-size: 0.88rem; white-space: nowrap; align-self: start; padding-top: 0.15rem; }
-  .defs { display: grid; grid-template-columns: 7.5rem 1fr; row-gap: 0.7rem; column-gap: 1rem; margin: 2.2rem 0 0; font-size: 0.95rem; }
-  .defs dt { color: var(--muted); font-weight: 500; }
-  .defs dd { margin: 0; color: var(--ink); }
+  .lead { margin: 0 0 1.4rem; max-width: 40rem; font-family: var(--serif); font-size: clamp(1.25rem, 2.4vw, 1.6rem); line-height: 1.45; color: var(--cream); }
+  .more { margin: 0; max-width: 38rem; color: var(--muted); }
+  .jobs { list-style: none; margin: 2.4rem 0 0; padding: 0; }
+  .jobs li { display: grid; grid-template-columns: 1fr auto; column-gap: 1.5rem; padding: 1rem 0; border-top: 1px solid var(--line); }
+  .jobs li:last-child { border-bottom: 1px solid var(--line); }
+  .jobs b { font-weight: 500; color: var(--cream); }
+  .jobs .r { display: block; color: var(--muted); font-size: 0.92rem; }
+  .jobs .d { color: var(--gold); font-size: 0.9rem; white-space: nowrap; padding-top: 0.15rem; }
+  .defs { display: grid; grid-template-columns: 7.5rem 1fr; row-gap: 0.7rem; column-gap: 1rem; margin: 2.4rem 0 0; font-size: 0.97rem; }
+  .defs dt { color: var(--muted); }
+  .defs dd { margin: 0; color: var(--cream); }
 
   /* contact */
-  .contact a.mail { display: inline-block; font-weight: 700; color: var(--ink); text-decoration: none; letter-spacing: -0.02em;
-    font-size: clamp(1.35rem, 4.6vw, 2.6rem); line-height: 1.2; border-bottom: 0.2rem solid var(--accent); word-break: break-word; }
-  .contact ul { list-style: none; margin: 1.6rem 0 0; padding: 0; color: var(--ink); }
-  .contact li + li { margin-top: 0.2rem; }
+  .mail { display: inline-block; font-family: var(--serif); color: var(--cream); text-decoration: none; border-bottom: 2px solid var(--gold);
+    font-size: clamp(1.6rem, 5.4vw, 3.2rem); line-height: 1.2; letter-spacing: -0.01em; word-break: break-word; }
+  .mail:hover { color: var(--gold); }
+  .contact ul { list-style: none; margin: 1.8rem 0 0; padding: 0; color: var(--muted); }
 
-  footer { padding: 2rem 0 3rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.85rem; }
+  footer { padding: 2rem 0 5rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }
 
   @media (max-width: 900px) {
+    .cats { display: none; }
+    .wrap { padding-right: clamp(1.6rem, 6vw, 3rem); }
     .work { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 720px) {
     section.row { grid-template-columns: 1fr; row-gap: 1.2rem; }
-    .spine { width: 6px; }
+  }
+  @media (max-width: 600px) {
+    .corner { display: none; }
+    .wrap { padding-left: 1.6rem; }
   }
   @media (max-width: 520px) {
     .work { grid-template-columns: 1fr; }
     .tile.wide { grid-column: auto; }
-    .tile { min-height: 11rem; }
+    .tile { min-height: 10.5rem; }
     .jobs li { grid-template-columns: 1fr; }
-    .jobs .d { padding-top: 0.2rem; }
   }
 </style>
 </head>
 <body>
-<div class="spine" aria-hidden="true"></div>
-<div class="wrap">
+<span class="corner tl" aria-hidden="true"></span>
+<span class="corner tr" aria-hidden="true"></span>
+<span class="corner bl" aria-hidden="true"></span>
+<span class="corner br" aria-hidden="true"></span>
+<div class="cats" aria-hidden="true">Reports<i></i>Newsletters<i></i>Campaigns<i></i>Environmental</div>
 
+<div class="wrap">
   <header class="top">
-    <span class="mark" aria-hidden="true"></span>
-    <nav aria-label="Main">
+    <nav aria-label="Main" style="display:flex;gap:2rem">
       <a href="#work">Work</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -151,47 +166,49 @@
 
   <main>
     <section class="hero" aria-labelledby="name">
-      <h1 id="name">Cheng Yiu Nam Young</h1>
-      <p class="role">Senior Graphic Designer</p>
-      <p class="tag">Art direction for retail, events and print</p>
-      <p class="avail"><i aria-hidden="true"></i>Available immediately</p>
-      <p class="cta">
-        <a class="btn primary" href="#work">See selected work</a>
-        <a class="btn ghost" href="mailto:youngnncheng@gmail.com">Email me</a>
-      </p>
+      <p class="eyebrow">Portfolio — Selected Work</p>
+      <h1 id="name">Young<br>Cheng</h1>
+      <p class="sub">Graphic Designer, Corporate &amp; Brand Communications</p>
+      <div class="rule" aria-hidden="true"></div>
+      <dl class="facts">
+        <div><dt>Email</dt><dd><a href="mailto:youngnncheng@gmail.com">youngnncheng@gmail.com</a></dd></div>
+        <div><dt>Phone</dt><dd>9384 8942</dd></div>
+        <div><dt>Based in</dt><dd>Hong Kong</dd></div>
+        <div><dt>Availability</dt><dd>Immediately</dd></div>
+      </dl>
     </section>
 
     <section class="row" id="work" aria-labelledby="work-h">
       <h2 id="work-h">Selected work</h2>
       <div>
-        <p class="work-intro">Brands and organisations I have designed for, across retail, transport, education, healthcare and technology.</p>
+        <p class="work-intro">Reports, newsletters, campaigns and environmental communications for brands and organisations.</p>
         <div class="work">
-          <div class="tile wide t-forest"><h3>UNIQLO Taiwan</h3></div>
-          <div class="tile t-ink"><h3>GU Hong Kong</h3></div>
+          <div class="tile wide t-gold"><h3>UNIQLO Taiwan</h3></div>
+          <div class="tile t-slate"><h3>GU Hong Kong</h3></div>
 
-          <div class="tile t-tint"><h3>OneCitybus</h3></div>
-          <div class="tile t-ink"><h3>IMMD Smart ID</h3></div>
-          <div class="tile t-tint"><h3>Green Tech Fund</h3></div>
+          <div class="tile t-outline"><h3>OneCitybus</h3></div>
+          <div class="tile t-slate"><h3>IMMD Smart ID</h3></div>
+          <div class="tile t-outline"><h3>Green Tech Fund</h3></div>
 
-          <div class="tile t-forest"><h3>HKPolyU PAIR Newsletter</h3></div>
-          <div class="tile t-tint"><h3>HORMETA</h3></div>
-          <div class="tile t-ink"><h3>ALGOTHERM</h3></div>
+          <div class="tile t-cream"><h3>HKPolyU PAIR Newsletter</h3></div>
+          <div class="tile t-outline"><h3>HORMETA</h3></div>
+          <div class="tile t-slate"><h3>ALGOTHERM</h3></div>
 
-          <div class="tile t-tint"><h3>HuSPA</h3></div>
-          <div class="tile t-forest"><h3>Watami International</h3></div>
-          <div class="tile t-tint"><h3>Hanison Limited</h3></div>
+          <div class="tile t-slate"><h3>HuSPA</h3></div>
+          <div class="tile t-gold"><h3>Watami International</h3></div>
+          <div class="tile t-outline"><h3>Hanison Limited</h3></div>
 
-          <div class="tile t-forest"><h3>HealthPlus</h3></div>
-          <div class="tile wide t-ink"><h3>Eight College</h3></div>
+          <div class="tile t-outline"><h3>HealthPlus</h3></div>
+          <div class="tile wide t-slate"><h3>Eight College</h3></div>
         </div>
       </div>
     </section>
 
-    <section class="row about" id="about" aria-labelledby="about-h">
+    <section class="row" id="about" aria-labelledby="about-h">
       <h2 id="about-h">About</h2>
       <div>
-        <p>Senior graphic designer working since 2014 across retail, events and print. Recently handled event design and UNIQLO and GU website updates at Breakfast Digital while also serving as assistant design manager, directing designers day to day.</p>
-        <p>I work closely with marketing, event and account teams so artwork meets the brief and ships on time.</p>
+        <p class="lead">Senior graphic designer working since 2014 across retail, events and print. Recently handled event design and UNIQLO and GU website updates at Breakfast Digital while also serving as assistant design manager, directing designers day to day.</p>
+        <p class="more">I work closely with marketing, event and account teams so artwork meets the brief and ships on time.</p>
 
         <ul class="jobs">
           <li><span><b>Breakfast Digital Limited</b><span class="r">Senior Graphic Designer and Assistant Design Manager</span></span><span class="d">Feb 2024 – Aug 2025</span></li>
