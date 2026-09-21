@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cheng Yiu Nam Young – Senior Graphic Designer</title>
+<meta name="description" content="Portfolio of Cheng Yiu Nam Young, senior graphic designer in Hong Kong. Art direction for retail, events and print.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap">
+<style>
+  :root {
+    --bg:        #FFFFFF;
+    --ink:       #14201A;
+    --text:      #2B3630;
+    --muted:     #5F6C65;
+    --accent:    #2A7A55;
+    --rule:      #D5DCD7;
+    --tint:      #EEF4F0;
+    --tile-ink:  #14201A;
+    --tile-ink-text: #FFFFFF;
+    --btn-text:  #FFFFFF;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0E1512; --ink: #EAF1EC; --text: #C9D4CD; --muted: #93A198;
+      --accent: #5CBE8E; --rule: #25332B; --tint: #17231D;
+      --tile-ink: #22332A; --tile-ink-text: #EAF1EC; --btn-text: #0E1512;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0E1512; --ink: #EAF1EC; --text: #C9D4CD; --muted: #93A198;
+    --accent: #5CBE8E; --rule: #25332B; --tint: #17231D;
+    --tile-ink: #22332A; --tile-ink-text: #EAF1EC; --btn-text: #0E1512;
+  }
+
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Poppins', 'Liberation Sans', Arial, sans-serif;
+    font-size: 1rem; line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+  }
+  a { color: inherit; }
+  a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  /* brand spine, echoing the resume */
+  .spine { position: fixed; left: 0; top: 0; bottom: 0; width: 8px; background: #2A7A55; z-index: 5; }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 3rem) 0 clamp(1.75rem, 6vw, 3.5rem); }
+
+  /* top bar */
+  .top { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 0; }
+  .mark { width: 1.1rem; height: 1.1rem; background: var(--accent); display: block; }
+  .top nav { display: flex; gap: clamp(1rem, 4vw, 2.25rem); font-weight: 500; font-size: 0.92rem; }
+  .top nav a { text-decoration: none; color: var(--ink); padding: 0.25rem 0; border-bottom: 2px solid transparent; }
+  .top nav a:hover { border-bottom-color: var(--accent); }
+
+  /* hero */
+  .hero { padding: clamp(3rem, 9vw, 6.5rem) 0 clamp(3rem, 8vw, 5.5rem); border-bottom: 0.18rem solid var(--ink); }
+  h1 {
+    margin: 0; font-weight: 700; color: var(--ink);
+    font-size: clamp(2.3rem, 7.6vw, 5.4rem); line-height: 1.02; letter-spacing: -0.035em;
+  }
+  .role { margin: 1.4rem 0 0; font-weight: 500; font-size: clamp(1.15rem, 2.6vw, 1.55rem); color: var(--ink); line-height: 1.25; }
+  .tag  { margin: 0.4rem 0 0; color: var(--muted); font-size: 1rem; }
+  .avail { margin: 1.6rem 0 0; display: flex; align-items: center; gap: 0.6rem; font-weight: 500; color: var(--accent); font-size: 0.95rem; }
+  .avail i { width: 0.7rem; height: 0.7rem; border-radius: 50%; background: var(--accent); display: inline-block; }
+  .cta { margin: 2.2rem 0 0; display: flex; flex-wrap: wrap; gap: 0.8rem; }
+  .btn {
+    display: inline-block; text-decoration: none; font-weight: 500; font-size: 0.95rem;
+    padding: 0.8rem 1.4rem; border: 2px solid var(--accent); border-radius: 0.2rem;
+  }
+  .btn.primary { background: var(--accent); color: var(--btn-text); }
+  .btn.ghost { color: var(--accent); }
+  .btn:hover { filter: brightness(1.08); }
+
+  /* sections: title rail | content */
+  section.row { display: grid; grid-template-columns: 11rem 1fr; column-gap: 2rem; padding: clamp(2.5rem, 6vw, 4rem) 0; border-bottom: 1px solid var(--rule); }
+  section.row:last-of-type { border-bottom: none; }
+  h2 { margin: 0; font-weight: 700; font-size: 1rem; color: var(--accent); line-height: 1.4; padding-top: 0.35rem; }
+
+  /* work grid */
+  .work { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; grid-auto-flow: dense; }
+  .work-intro { margin: 0 0 1.6rem; color: var(--muted); max-width: 38rem; }
+  .tile {
+    position: relative; min-height: 14rem; padding: 1.25rem 1.3rem;
+    display: flex; flex-direction: column; justify-content: space-between;
+    border-radius: 0.2rem;
+  }
+  .tile.wide { grid-column: span 2; }
+  .tile::before { content: ""; width: 0.8rem; height: 0.8rem; background: currentColor; opacity: 0.9; }
+  .tile h3 { margin: 0; font-weight: 700; font-size: clamp(1.15rem, 2.2vw, 1.55rem); line-height: 1.15; letter-spacing: -0.015em; }
+  .t-forest { background: #2A7A55; color: #FFFFFF; }
+  .t-ink    { background: var(--tile-ink); color: var(--tile-ink-text); }
+  .t-tint   { background: var(--tint); color: var(--ink); }
+  .t-tint::before { background: var(--accent); }
+
+  /* about */
+  .about p { margin: 0 0 1.4rem; max-width: 40rem; font-size: 1.05rem; color: var(--ink); line-height: 1.7; }
+  .jobs { list-style: none; margin: 2rem 0 0; padding: 0; }
+  .jobs li { display: grid; grid-template-columns: 1fr auto; column-gap: 1.5rem; padding: 0.95rem 0; border-top: 1px solid var(--rule); }
+  .jobs li:last-child { border-bottom: 1px solid var(--rule); }
+  .jobs b { color: var(--ink); font-weight: 700; }
+  .jobs .r { display: block; color: var(--muted); font-size: 0.9rem; }
+  .jobs .d { color: var(--accent); font-weight: 500; font-size: 0.88rem; white-space: nowrap; align-self: start; padding-top: 0.15rem; }
+  .defs { display: grid; grid-template-columns: 7.5rem 1fr; row-gap: 0.7rem; column-gap: 1rem; margin: 2.2rem 0 0; font-size: 0.95rem; }
+  .defs dt { color: var(--muted); font-weight: 500; }
+  .defs dd { margin: 0; color: var(--ink); }
+
+  /* contact */
+  .contact a.mail { display: inline-block; font-weight: 700; color: var(--ink); text-decoration: none; letter-spacing: -0.02em;
+    font-size: clamp(1.35rem, 4.6vw, 2.6rem); line-height: 1.2; border-bottom: 0.2rem solid var(--accent); word-break: break-word; }
+  .contact ul { list-style: none; margin: 1.6rem 0 0; padding: 0; color: var(--ink); }
+  .contact li + li { margin-top: 0.2rem; }
+
+  footer { padding: 2rem 0 3rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.85rem; }
+
+  @media (max-width: 900px) {
+    .work { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 720px) {
+    section.row { grid-template-columns: 1fr; row-gap: 1.2rem; }
+    .spine { width: 6px; }
+  }
+  @media (max-width: 520px) {
+    .work { grid-template-columns: 1fr; }
+    .tile.wide { grid-column: auto; }
+    .tile { min-height: 11rem; }
+    .jobs li { grid-template-columns: 1fr; }
+    .jobs .d { padding-top: 0.2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="spine" aria-hidden="true"></div>
+<div class="wrap">
+
+  <header class="top">
+    <span class="mark" aria-hidden="true"></span>
+    <nav aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="name">
+      <h1 id="name">Cheng Yiu Nam Young</h1>
+      <p class="role">Senior Graphic Designer</p>
+      <p class="tag">Art direction for retail, events and print</p>
+      <p class="avail"><i aria-hidden="true"></i>Available immediately</p>
+      <p class="cta">
+        <a class="btn primary" href="#work">See selected work</a>
+        <a class="btn ghost" href="mailto:youngnncheng@gmail.com">Email me</a>
+      </p>
+    </section>
+
+    <section class="row" id="work" aria-labelledby="work-h">
+      <h2 id="work-h">Selected work</h2>
+      <div>
+        <p class="work-intro">Brands and organisations I have designed for, across retail, transport, education, healthcare and technology.</p>
+        <div class="work">
+          <div class="tile wide t-forest"><h3>UNIQLO Taiwan</h3></div>
+          <div class="tile t-ink"><h3>GU Hong Kong</h3></div>
+
+          <div class="tile t-tint"><h3>OneCitybus</h3></div>
+          <div class="tile t-ink"><h3>IMMD Smart ID</h3></div>
+          <div class="tile t-tint"><h3>Green Tech Fund</h3></div>
+
+          <div class="tile t-forest"><h3>HKPolyU PAIR Newsletter</h3></div>
+          <div class="tile t-tint"><h3>HORMETA</h3></div>
+          <div class="tile t-ink"><h3>ALGOTHERM</h3></div>
+
+          <div class="tile t-tint"><h3>HuSPA</h3></div>
+          <div class="tile t-forest"><h3>Watami International</h3></div>
+          <div class="tile t-tint"><h3>Hanison Limited</h3></div>
+
+          <div class="tile t-forest"><h3>HealthPlus</h3></div>
+          <div class="tile wide t-ink"><h3>Eight College</h3></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="row about" id="about" aria-labelledby="about-h">
+      <h2 id="about-h">About</h2>
+      <div>
+        <p>Senior graphic designer working since 2014 across retail, events and print. Recently handled event design and UNIQLO and GU website updates at Breakfast Digital while also serving as assistant design manager, directing designers day to day.</p>
+        <p>I work closely with marketing, event and account teams so artwork meets the brief and ships on time.</p>
+
+        <ul class="jobs">
+          <li><span><b>Breakfast Digital Limited</b><span class="r">Senior Graphic Designer and Assistant Design Manager</span></span><span class="d">Feb 2024 – Aug 2025</span></li>
+          <li><span><b>CM Marketing Limited</b><span class="r">Senior Graphic Designer</span></span><span class="d">Aug 2022 – Aug 2023</span></li>
+          <li><span><b>Exheehee Limited</b><span class="r">Graphic Designer</span></span><span class="d">Nov 2016 – Aug 2022</span></li>
+          <li><span><b>Lesdans Creations</b><span class="r">Senior Graphic Designer</span></span><span class="d">Oct 2014 – Jun 2016</span></li>
+        </ul>
+
+        <dl class="defs">
+          <dt>Design</dt><dd>Adobe Illustrator, InDesign, Photoshop, Premiere Pro, XD</dd>
+          <dt>AI</dt><dd>Adobe Firefly, Manus, Gemini</dd>
+          <dt>Languages</dt><dd>Cantonese (native), English (fluent), Putonghua (fluent)</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="row contact" id="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h">Contact</h2>
+      <div>
+        <a class="mail" href="mailto:youngnncheng@gmail.com">youngnncheng@gmail.com</a>
+        <ul>
+          <li>9384 8942</li>
+          <li>Hong Kong</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Cheng Yiu Nam Young</footer>
+</div>
+</body>
+</html>
