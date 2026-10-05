@@ -88,8 +88,27 @@
   section.row { display: grid; grid-template-columns: 11rem 1fr; column-gap: 2rem; padding: clamp(3rem, 7vw, 5rem) 0; border-top: 1px solid var(--line); }
   h2 { margin: 0; padding-top: 0.3rem; font-family: var(--sans); font-weight: 500; font-size: 1rem; color: var(--gold); line-height: 1.4; }
 
-  .work-intro { margin: 0 0 2rem; font-family: var(--serif); font-style: italic; font-size: clamp(1.2rem, 2.4vw, 1.6rem); line-height: 1.35; color: var(--muted); max-width: 40rem; }
+  .work-intro { margin: 0 0 2.6rem; font-family: var(--serif); font-style: italic; font-size: clamp(1.2rem, 2.4vw, 1.6rem); line-height: 1.35; color: var(--muted); max-width: 40rem; }
+
+  /* work categories */
+  .cat { margin: 0 0 clamp(2.6rem, 5.5vw, 3.6rem); }
+  .cat:last-child { margin-bottom: 0; }
+  .cat-head { display: flex; align-items: baseline; gap: 0.8rem; margin: 0 0 1.1rem; padding-bottom: 0.9rem; border-bottom: 1px solid var(--line); }
+  .cat-head h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-style: italic; font-size: clamp(1.35rem, 2.6vw, 1.85rem); color: var(--cream); letter-spacing: -0.005em; }
+  .cat-count { color: var(--dim); font-size: 0.85rem; }
+  .cat-label { margin: 0 0 0.9rem; color: var(--muted); font-size: 0.76rem; letter-spacing: 0.09em; text-transform: uppercase; }
+  .cat-empty { margin: 0; color: var(--muted); font-family: var(--serif); font-style: italic; font-size: 1.05rem; }
+
   .work { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; grid-auto-flow: dense; }
+
+  .more { margin-top: 1.3rem; }
+  .more > summary { cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 0.55rem;
+    color: var(--gold); font-family: var(--sans); font-weight: 500; font-size: 0.9rem; padding: 0.2rem 0; }
+  .more > summary::-webkit-details-marker { display: none; }
+  .more > summary::before { content: "+"; display: inline-block; width: 1rem; text-align: center; }
+  .more[open] > summary::before { content: "\2212"; }
+  .more[open] > summary { margin-bottom: 1.1rem; }
+  .more:hover > summary, .more > summary:focus-visible { color: var(--cream); }
   .tile {
     min-height: 13.5rem; padding: 1.2rem 1.3rem; display: flex; flex-direction: column; justify-content: space-between;
     border: 1px solid transparent; border-radius: 2px;
@@ -122,7 +141,7 @@
 
   /* contact */
   .mail { display: inline-block; font-family: var(--serif); color: var(--cream); text-decoration: none; border-bottom: 2px solid var(--gold);
-    font-size: clamp(1.6rem, 5.4vw, 3.2rem); line-height: 1.2; letter-spacing: -0.01em; word-break: break-word; }
+    font-size: clamp(1.36rem, 4.59vw, 2.72rem); line-height: 1.2; letter-spacing: -0.01em; word-break: break-word; }
   .mail:hover { color: var(--gold); }
   .contact ul { list-style: none; margin: 1.8rem 0 0; padding: 0; color: var(--muted); }
 
@@ -182,7 +201,7 @@
 <span class="corner tr" aria-hidden="true"></span>
 <span class="corner bl" aria-hidden="true"></span>
 <span class="corner br" aria-hidden="true"></span>
-<div class="cats" aria-hidden="true">Reports<i></i>Newsletters<i></i>Campaigns<i></i>Environmental</div>
+<div class="cats" aria-hidden="true">Event &amp; Exhibition<i></i>Digital<i></i>Print<i></i>Photography<i></i>Creative</div>
 
 <div class="wrap">
   <header class="top">
@@ -201,42 +220,84 @@
       <div class="rule" aria-hidden="true"></div>
       <dl class="facts">
         <div><dt>Email</dt><dd><a href="mailto:youngnncheng@gmail.com">youngnncheng@gmail.com</a></dd></div>
-        <div><dt>Phone</dt><dd>9384 8942</dd></div>
+        <div><dt>Phone</dt><dd>+852 9384 0020</dd></div>
         <div><dt>Based in</dt><dd>Hong Kong</dd></div>
-        <div><dt>Availability</dt><dd>Immediately</dd></div>
+        <div style="display:none"><dt>Availability</dt><dd>Immediately</dd></div>
       </dl>
     </section>
 
     <section class="row" id="work" aria-labelledby="work-h">
-      <h2 id="work-h">Selected work</h2>
+      <h2 id="work-h">Works</h2>
       <div>
-        <p class="work-intro">Reports, newsletters, campaigns and environmental communications for brands and organisations.</p>
-        <div class="work">
-          <div class="tile wide t-gold"><h3>UNIQLO Taiwan</h3></div>
-          <div class="tile t-slate"><h3>GU Hong Kong</h3></div>
+        <p class="work-intro">Event and exhibition, digital, print, photography and creative work for brands and organisations.</p>
 
-          <div class="tile t-outline"><h3>OneCitybus</h3></div>
-          <div class="tile t-slate"><h3>IMMD Smart ID</h3></div>
-          <div class="tile t-outline"><h3>Green Tech Fund</h3></div>
-
-          <div class="tile t-cream"><h3>HKPolyU PAIR Newsletter</h3></div>
-          <div class="tile t-outline"><h3>HORMETA</h3></div>
-          <div class="tile t-slate"><h3>ALGOTHERM</h3></div>
-
-          <div class="tile t-slate"><h3>HuSPA</h3></div>
-          <div class="tile t-gold"><h3>Watami International</h3></div>
-          <div class="tile t-outline"><h3>Hanison Limited</h3></div>
-
-          <div class="tile t-outline"><h3>HealthPlus</h3></div>
-          <div class="tile wide t-slate"><h3>Eight College</h3></div>
+        <div class="cat">
+          <div class="cat-head"><h3>Event &amp; Exhibition</h3><span class="cat-count">3</span></div>
+          <p class="cat-label">Selected work</p>
+          <div class="work">
+            <div class="tile wide t-gold"><h3>Citybus</h3></div>
+            <div class="tile t-slate"><h3>IMMD</h3></div>
+          </div>
+          <details class="more">
+            <summary>More <span class="cat-count">(1)</span></summary>
+            <div class="work">
+              <div class="tile t-outline"><h3>HealthPlus</h3></div>
+            </div>
+          </details>
         </div>
+
+        <div class="cat">
+          <div class="cat-head"><h3>Digital</h3><span class="cat-count">4</span></div>
+          <p class="cat-label">Selected work</p>
+          <div class="work">
+            <div class="tile wide t-gold"><h3>UNIQLO &amp; GU</h3></div>
+            <div class="tile t-slate"><h3>HuSPA</h3></div>
+            <div class="tile t-cream"><h3>The Hong Kong Polytechnic University</h3></div>
+          </div>
+          <details class="more">
+            <summary>More <span class="cat-count">(1)</span></summary>
+            <div class="work">
+              <div class="tile t-outline"><h3>Green Tech Fund</h3></div>
+            </div>
+          </details>
+        </div>
+
+        <div class="cat">
+          <div class="cat-head"><h3>Print</h3><span class="cat-count">4</span></div>
+          <p class="cat-label">Selected work</p>
+          <div class="work">
+            <div class="tile wide t-outline"><h3>Hanison Project Management Limited</h3></div>
+          </div>
+          <details class="more">
+            <summary>More <span class="cat-count">(3)</span></summary>
+            <div class="work">
+              <div class="tile t-outline"><h3>HORMETA</h3></div>
+              <div class="tile t-slate"><h3>ALGOTHERM</h3></div>
+              <div class="tile t-gold"><h3>Watami International</h3></div>
+            </div>
+          </details>
+        </div>
+
+        <div class="cat">
+          <div class="cat-head"><h3>Photography</h3><span class="cat-count">1</span></div>
+          <p class="cat-label">Selected work</p>
+          <div class="work">
+            <div class="tile wide t-slate"><h3>Hanison Project Management Limited</h3></div>
+          </div>
+        </div>
+
+        <div class="cat">
+          <div class="cat-head"><h3>Creative</h3></div>
+          <p class="cat-empty">New creative work coming soon.</p>
+        </div>
+
       </div>
     </section>
 
     <section class="row" id="about" aria-labelledby="about-h">
       <h2 id="about-h">About</h2>
       <div>
-        <p class="lead">Senior graphic designer working since 2014 across retail, events and print. Recently handled event design and UNIQLO and GU website updates at Breakfast Digital while also serving as assistant design manager, directing designers day to day.</p>
+        <p class="lead">Senior graphic designer working since 2009 across retail, events and print. Recently handled event design and UNIQLO and GU website updates at Breakfast Digital while also serving as assistant design manager, directing designers day to day.</p>
         <p class="more">I work closely with marketing, event and account teams so artwork meets the brief and ships on time.</p>
 
         <ul class="jobs">
@@ -248,7 +309,7 @@
 
         <dl class="defs">
           <dt>Design</dt><dd>Adobe Illustrator, InDesign, Photoshop, Premiere Pro, XD</dd>
-          <dt>AI</dt><dd>Adobe Firefly, Manus, Gemini</dd>
+          <dt>AI</dt><dd>Adobe Firefly, Manus, Gemini, Claude</dd>
           <dt>Languages</dt><dd>Cantonese (native), English (fluent), Putonghua (fluent)</dd>
         </dl>
       </div>
@@ -259,7 +320,7 @@
       <div>
         <a class="mail" href="mailto:youngnncheng@gmail.com">youngnncheng@gmail.com</a>
         <ul>
-          <li>9384 8942</li>
+          <li>+852 9384 0020</li>
           <li>Hong Kong</li>
         </ul>
       </div>
@@ -293,10 +354,21 @@
      The project name must match the name on the tile exactly, and every entry
      except the last needs a comma after its closing brace. */
   var PROJECTS = {
-    // "UNIQLO Taiwan": {
-    //   text: "One short line about the project (optional).",
-    //   images: ["images/uniqlo-1.jpg", "images/uniqlo-2.jpg", "images/uniqlo-3.jpg"]
-    // },
+    "UNIQLO & GU": {
+      images: ["images/Digital_SelectedWork_uniqlo_gu.jpg"]
+    },
+    "HuSPA": {
+      images: ["images/Digital_SelectedWork_HuSPA.jpg"]
+    },
+    "The Hong Kong Polytechnic University": {
+      images: ["images/Digital_SelectedWork_hkPolyU.jpg"]
+    },
+    "Citybus": {
+      images: ["images/EventExhibition_SelectedWork_Citybus.jpg"]
+    },
+    "IMMD": {
+      images: ["images/EventExhibition_SelectedWork_IMMD.jpg"]
+    },
   };
   /* ============================================================== */
 
